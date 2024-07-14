@@ -1,4 +1,4 @@
-package com.spproject.spproject.common;
+package com.spproject.util;
 
 public interface Coach {
 

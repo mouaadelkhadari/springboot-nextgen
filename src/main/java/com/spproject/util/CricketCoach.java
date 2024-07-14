@@ -1,6 +1,5 @@
-package com.spproject.spproject.common;
+package com.spproject.util;
 
-import com.spproject.spproject.common.Coach;
 import org.springframework.stereotype.Component;
 
 @Component
