@@ -5,12 +5,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 
-@SpringBootApplication(
+/* @SpringBootApplication(
 		scanBasePackages = {
 				"com.spproject.spproject",
 				"com.spproject.util"
 		}
 )
+*/
+@SpringBootApplication
 public class SpprojectApplication {
 
 	public static void main(String[] args) {
