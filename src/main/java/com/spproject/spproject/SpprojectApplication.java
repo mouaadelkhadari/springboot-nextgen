@@ -25,16 +25,30 @@ public class SpprojectApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
 		return args -> {
+			readStudent(studentDAO);
 			//saveStudent(studentDAO);
-			createMultiplStudent(studentDAO);
+			//createMultiplStudent(studentDAO);
 		};
+	}
+
+
+	private void readStudent(StudentDAO studentDAO){
+		// create a new student
+		Student studentImp = new Student("harry", "potter", "harrypoteer@mail.com");
+		studentDAO.save(studentImp);
+
+		Long studentId = studentImp.getId();
+		System.out.println("Student id is: "+ studentImp.getId());
+
+		Student myStudent =  studentDAO.readStudent(studentId);
+		System.out.println("information of student: "+ myStudent);
 	}
 
 	private void createMultiplStudent(StudentDAO studentDAO) {
 
-		Student student1 = new Student("brahim", "diaz", "brahimdiaz@mail.com");
-		Student student2 = new Student("leo", "messi", "leomessi@mail.com");
-		Student student3 = new Student("yassine", "bounou", "yassinebounou@mail.com ");
+		Student student1 = new Student("brahim", "diaz", "brahim@mail.com");
+		Student student2 = new Student("leo", "messi", "leo@mail.com");
+		Student student3 = new Student("yassine", "bounou", "yassine@mail.com ");
 
 		studentDAO.save(student1);
 		studentDAO.save(student2);

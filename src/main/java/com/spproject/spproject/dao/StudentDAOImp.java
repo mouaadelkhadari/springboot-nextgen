@@ -23,4 +23,9 @@ public class StudentDAOImp implements StudentDAO{
     public void save(Student student) {
         entityManager.persist(student);
     }
+
+    @Override
+    public Student readStudent(Long id) {
+            return entityManager.find(Student.class, id);
+    }
 }
