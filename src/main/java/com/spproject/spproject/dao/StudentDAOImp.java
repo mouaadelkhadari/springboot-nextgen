@@ -49,4 +49,11 @@ public class StudentDAOImp implements StudentDAO{
 
         return typedQuery.getResultList();
     }
+
+    @Override
+    @Transactional
+    public void update(Student student) {
+        entityManager.merge(student);
+    }
+
 }
