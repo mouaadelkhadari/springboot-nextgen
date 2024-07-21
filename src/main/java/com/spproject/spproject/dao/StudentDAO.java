@@ -12,4 +12,6 @@ public interface StudentDAO {
     public Student readStudent(Long id);
 
     public List<Student> findAll();
+
+    public List<Student> findByLastName(String lastname);
 }

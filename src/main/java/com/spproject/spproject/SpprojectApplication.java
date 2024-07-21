@@ -27,12 +27,22 @@ public class SpprojectApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
 		return args -> {
-            getAllStudents(studentDAO);
+            findStudentsByLastName(studentDAO);
+            //getAllStudents(studentDAO);
 			//readStudent(studentDAO);
 			//saveStudent(studentDAO);
 			//createMultiplStudent(studentDAO);
 		};
 	}
+
+    private void findStudentsByLastName(StudentDAO studentDAO) {
+
+        List<Student> students = studentDAO.findByLastName("diaz");
+
+        for(Student s : students){
+            System.out.println(students);
+        }
+    }
 
     private void getAllStudents(StudentDAO studentDAO) {
 
