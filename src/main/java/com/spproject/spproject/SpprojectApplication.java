@@ -7,6 +7,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.util.List;
+
 
 /* @SpringBootApplication(
 		scanBasePackages = {
@@ -25,14 +27,24 @@ public class SpprojectApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
 		return args -> {
-			readStudent(studentDAO);
+            getAllStudents(studentDAO);
+			//readStudent(studentDAO);
 			//saveStudent(studentDAO);
 			//createMultiplStudent(studentDAO);
 		};
 	}
 
+    private void getAllStudents(StudentDAO studentDAO) {
 
-	private void readStudent(StudentDAO studentDAO){
+        List<Student> students = studentDAO.findAll();
+
+        for(Student s : students){
+            System.out.println(s);
+        }
+    }
+
+
+    private void readStudent(StudentDAO studentDAO){
 		// create a new student
 		Student studentImp = new Student("harry", "potter", "harrypoteer@mail.com");
 		studentDAO.save(studentImp);
