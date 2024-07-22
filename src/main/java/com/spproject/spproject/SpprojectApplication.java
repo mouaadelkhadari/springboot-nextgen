@@ -27,14 +27,21 @@ public class SpprojectApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
 		return args -> {
-			deleteStudent(studentDAO);
+			//deleteAllStudent(studentDAO);
+			//deleteStudent(studentDAO);
             //updateFirstNameOfStudent(studentDAO);
             //findStudentsByLastName(studentDAO);
             //getAllStudents(studentDAO);
 			//readStudent(studentDAO);
 			//saveStudent(studentDAO);
-			//createMultiplStudent(studentDAO);
+			createMultiplStudent(studentDAO);
 		};
+	}
+
+	private void deleteAllStudent(StudentDAO studentDAO) {
+		//deleting all students
+		int c = studentDAO.deleteAll();
+		System.out.println("deleted rows: " + c);
 	}
 
 	private void deleteStudent(StudentDAO studentDAO) {
