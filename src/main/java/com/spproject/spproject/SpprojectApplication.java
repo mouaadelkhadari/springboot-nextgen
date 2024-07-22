@@ -34,7 +34,7 @@ public class SpprojectApplication {
             //getAllStudents(studentDAO);
 			//readStudent(studentDAO);
 			//saveStudent(studentDAO);
-			createMultiplStudent(studentDAO);
+			//createMultiplStudent(studentDAO);
 		};
 	}
 
