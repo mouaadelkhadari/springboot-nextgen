@@ -27,7 +27,8 @@ public class SpprojectApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
 		return args -> {
-            updateFirstNameOfStudent(studentDAO);
+			deleteStudent(studentDAO);
+            //updateFirstNameOfStudent(studentDAO);
             //findStudentsByLastName(studentDAO);
             //getAllStudents(studentDAO);
 			//readStudent(studentDAO);
@@ -36,7 +37,13 @@ public class SpprojectApplication {
 		};
 	}
 
-    private void updateFirstNameOfStudent(StudentDAO studentDAO) {
+	private void deleteStudent(StudentDAO studentDAO) {
+		Long id = 3015L;
+		studentDAO.delete(id);
+		System.out.println("Student deleted with success");
+	}
+
+	private void updateFirstNameOfStudent(StudentDAO studentDAO) {
         //find user by id
         Long id = 6894L;
         Student student = studentDAO.readStudent(id);
