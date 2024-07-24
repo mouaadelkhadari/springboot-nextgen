@@ -30,4 +30,17 @@ public class EmployeeRestController {
         }
         return employee;
     }
+
+    @PostMapping("/employees")
+    public Employee saveEmployee(@RequestBody Employee employee) {
+        employee.setId(0L);
+        Employee savedEmployee = employeeService.save(employee);
+        return savedEmployee;
+    }
+
+    @PutMapping("/employees")
+    public Employee updateEmployee(@RequestBody Employee employee) {
+        Employee updatedEmployee = employeeService.save(employee);
+        return updatedEmployee;
+    }
 }
